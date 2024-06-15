@@ -15,5 +15,5 @@ jobs:
 
     - name: Conéctate a tu instancia de EC2
       run: |
-        # Reemplaza 'tu-usuario' y 'tu-direccion-ip' con tus propias credenciales
-        ssh -i  ~/Desktop/key-bastion.pem ubuntu@54.242.29.61 "echo 'Hola Mundo' > hola_mundo.txt"
+          ssh -i ${{ secrets.MY_PEM_KEY }} ubuntu@54.242.29.61 "echo 'Hola Mundo' > hola_mundo.txt"
+
