@@ -1,0 +1,19 @@
+name: Generar Hola Mundo en EC2
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  hola-mundo:
+    name: Ejecutar Hola Mundo
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Conéctate a tu instancia de EC2
+      run: |
+        # Reemplaza 'tu-usuario' y 'tu-direccion-ip' con tus propias credenciales
+        ssh -i  ~/Desktop/key-bastion.pem ubuntu@54.242.29.61 "echo 'Hola Mundo' > hola_mundo.txt"
